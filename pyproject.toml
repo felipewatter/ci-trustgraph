@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=75,<82", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ci-trustgraph"
+version = "1.0.0"
+description = "Offline cross-workflow trust-boundary analyzer for GitHub Actions"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6.0.2,<7"]
+authors = [{name = "Felipe Watter"}]
+license = {text = "MIT"}
+keywords = ["devsecops", "github-actions", "ci-security", "sast", "sarif", "trust-boundary"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Topic :: Security"]
+
+[project.scripts]
+ci-trustgraph = "ci_trustgraph.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
