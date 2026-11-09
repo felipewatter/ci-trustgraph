@@ -1,11 +1,9 @@
-# CI TrustGraph v1.0.0
+# CI TrustGraph v1.0.2
 
-Initial public release of an **offline GitHub Actions cross-workflow trust-boundary analyzer**.
+Maintenance release to synchronize the published package with the latest CI-verified `main` revision.
 
-- Nine explainable security checks: workflow token privileges, untrusted expression interpolation, self-hosted runner exposure, remote action pinning and PR-controlled checkout of privileged workflows.
-- **Cross-workflow trust tracing (TG009)** links potentially untrusted artifacts across an upstream uploader and a privileged downstream consumer, providing a reproducible evidence path.
-- Text, JSON, SARIF 2.1.0, graph JSON, and security regression baselines.
-- Safe YAML ingestion with duplicate-key, alias and symlink rejection plus bounded files/nodes.
-- Python 3.11+ packaged CLI, extensive tests, and multi-OS GitHub Actions CI.
+- Updated SHA-pinned `actions/setup-python` to v7.1.0.
+- Preserved existing offline trust-boundary detection, reporting and API behavior.
+- Built and verified wheel, sdist and SHA-256 checksums from the exact passing CI commit.
 
-**Scope:** static heuristic analysis. Findings can overapproximate real attack paths, and absence of findings is not proof of safety. Read README, THREAT_MODEL and SECURITY before operating in production.
+The previous v1.0.1 release remains immutable. The analyzer is heuristic; findings require human review.
